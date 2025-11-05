@@ -27,8 +27,8 @@ importers:
         specifier: ^6.1.12
         version: 6.1.12(@mikro-orm/core@6.1.12)
       '@mikro-orm/sqlite':
-        specifier: ^6.1.12
-        version: 6.1.12(@mikro-orm/core@6.1.12)
+        specifier: ^6.5.9
+        version: 6.5.9(@mikro-orm/core@6.1.12)
       ajv:
         specifier: ^8.12.0
         version: 8.12.0
@@ -1571,7 +1571,7 @@ packages:
     dependencies:
       '@jercle/yargonaut': 1.1.5
       '@mikro-orm/core': 6.1.12
-      '@mikro-orm/knex': 6.1.12(@mikro-orm/core@6.1.12)(sqlite3@5.1.7)
+      '@mikro-orm/knex': 6.1.12(@mikro-orm/core@6.1.12)
       fs-extra: 11.2.0
       tsconfig-paths: 4.2.0
       yargs: 17.7.2
@@ -1598,7 +1598,7 @@ packages:
       mikro-orm: 6.1.12
       reflect-metadata: 0.2.1
 
-  /@mikro-orm/knex@6.1.12(@mikro-orm/core@6.1.12)(sqlite3@5.1.7):
+  /@mikro-orm/knex@6.1.12(@mikro-orm/core@6.1.12):
     resolution: {integrity: sha512-bGRDTM13ASYcmte8BglikDwfoYmCo8YUW5LY4Mn5GUCyzjLV7XP23SrTaerLIxXlNiTnJhTO+On3cOyndFwHpw==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
@@ -1618,6 +1618,36 @@ packages:
       - supports-color
       - tedious
 
+  /@mikro-orm/knex@6.5.9(@mikro-orm/core@6.1.12)(sqlite3@5.1.7):
+    resolution: {integrity: sha512-VtBPIcNYyWeQ+M+ha5DD+961gc6jtJDX0JLkBfMatTgHl78R1IuiTPaPfen4X9ezEDsR6N8XqJtuRmOXRFl6lA==}
+    engines: {node: '>= 18.12.0'}
+    peerDependencies:
+      '@mikro-orm/core': ^6.0.0
+      better-sqlite3: '*'
+      libsql: '*'
+      mariadb: '*'
+    peerDependenciesMeta:
+      better-sqlite3:
+        optional: true
+      libsql:
+        optional: true
+      mariadb:
+        optional: true
+    dependencies:
+      '@mikro-orm/core': 6.1.12
+      fs-extra: 11.3.2
+      knex: 3.1.0(sqlite3@5.1.7)
+      sqlstring: 2.3.3
+    transitivePeerDependencies:
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+    dev: false
+
   /@mikro-orm/mariadb@6.1.12(@mikro-orm/core@6.1.12):
     resolution: {integrity: sha512-rcpH801qqLMFyer9cFkWeh1F16BQyj0q2UhrZXXE+57mJajgqmq/+zmot5sCq9jPxzi2SKEn+l7M30L9bmyHWw==}
     engines: {node: '>= 18.12.0'}
@@ -1625,7 +1655,7 @@ packages:
       '@mikro-orm/core': ^6.0.0
     dependencies:
       '@mikro-orm/core': 6.1.12
-      '@mikro-orm/knex': 6.1.12(@mikro-orm/core@6.1.12)(sqlite3@5.1.7)
+      '@mikro-orm/knex': 6.1.12(@mikro-orm/core@6.1.12)
       mariadb: 2.5.6
     transitivePeerDependencies:
       - better-sqlite3
@@ -1649,20 +1679,22 @@ packages:
       ts-morph: 22.0.0
     dev: false
 
-  /@mikro-orm/sqlite@6.1.12(@mikro-orm/core@6.1.12):
-    resolution: {integrity: sha512-IOv0s5UYdO2dzCiHGpTcceo2FOZtddnMmlNmRkBXhKzYkYUEut0qJJqt20d8oJsMJuEk8Et7/MAgdJT5FbWTzA==}
+  /@mikro-orm/sqlite@6.5.9(@mikro-orm/core@6.1.12):
+    resolution: {integrity: sha512-SyQ17cCdq4JyL7ZM0GshsXW7ABuOydpdYRH0bXU69H5BWjmJ9nfdb1I6mNqJPbsN9morv14QQLjhl/VEAhuq1g==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       '@mikro-orm/core': ^6.0.0
     dependencies:
       '@mikro-orm/core': 6.1.12
-      '@mikro-orm/knex': 6.1.12(@mikro-orm/core@6.1.12)(sqlite3@5.1.7)
-      fs-extra: 11.2.0
+      '@mikro-orm/knex': 6.5.9(@mikro-orm/core@6.1.12)(sqlite3@5.1.7)
+      fs-extra: 11.3.2
       sqlite3: 5.1.7
       sqlstring-sqlite: 0.1.1
     transitivePeerDependencies:
       - better-sqlite3
       - bluebird
+      - libsql
+      - mariadb
       - mysql
       - mysql2
       - pg
@@ -2838,6 +2870,7 @@ packages:
   /are-we-there-yet@3.0.1:
     resolution: {integrity: sha512-QZW4EDmGwlYur0Yyf/b2uGucHQMa8aFUP7eu9ddR73vvhFyt4V0Vl3QHPcTNJ8l6qYOBdxgXdnBXQrHilfRQBg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
     requiresBuild: true
     dependencies:
       delegates: 1.0.0
@@ -5816,6 +5849,15 @@ packages:
       jsonfile: 6.1.0
       universalify: 2.0.1
 
+  /fs-extra@11.3.2:
+    resolution: {integrity: sha512-Xr9F6z6up6Ws+NjzMCZc6WXg2YFRlrLP9NQDO3VQrWrfiojdhS56TzueT88ze0uBdCTwEIhQ3ptnmKeWGFAe0A==}
+    engines: {node: '>=14.14'}
+    dependencies:
+      graceful-fs: 4.2.11
+      jsonfile: 6.1.0
+      universalify: 2.0.1
+    dev: false
+
   /fs-minipass@2.1.0:
     resolution: {integrity: sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==}
     engines: {node: '>= 8'}
@@ -5854,6 +5896,7 @@ packages:
   /gauge@4.0.4:
     resolution: {integrity: sha512-f9m+BEN5jkg6a0fZjleidjN51VE1X+mPFQ2DJ0uv1V39oCLCbsGe6yjbBnp7eK7z/+GAon99a3nHuqbuuthyPg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
     requiresBuild: true
     dependencies:
       aproba: 2.0.0
@@ -8407,6 +8450,7 @@ packages:
   /npmlog@6.0.2:
     resolution: {integrity: sha512-/vBvz5Jfr9dT/aFWd0FIRf+T/Q2WBsLENygUaFUqstqsycmZAP/t5BvFJTK0viFmSUxiUKTUplWy5vt+rvKIxg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
     requiresBuild: true
     dependencies:
       are-we-there-yet: 3.0.1
