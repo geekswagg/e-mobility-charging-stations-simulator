@@ -1,4 +1,4 @@
-FROM node:lts-alpine AS builder
+FROM node:24.13.0-alpine3.23 AS builder
 
 # Build simulator and dashboard
 WORKDIR /usr/builder
@@ -18,7 +18,7 @@ RUN set -ex \
   && cp src/assets/config-template.json public/config.json \
   && pnpm build
 
-FROM node:lts-alpine
+FROM node:24.13.0-alpine3.23
 
 ARG STACK_TRACE_LIMIT=1024
 ARG MAX_OLD_SPACE_SIZE=768
