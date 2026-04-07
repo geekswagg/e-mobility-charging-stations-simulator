@@ -92,7 +92,7 @@
     }
   },
   "dependencies": {
-    "@mikro-orm/core": "^6.1.12",
+    "@mikro-orm/core": "^6.6.10",
     "@mikro-orm/mariadb": "^6.1.12",
     "@mikro-orm/reflection": "^6.1.12",
     "@mikro-orm/sqlite": "^6.1.12",
@@ -107,7 +107,7 @@
     "mongodb": "^6.5.0",
     "poolifier": "^3.1.29",
     "rambda": "^9.2.0",
-    "tar": "^6.2.1",
+    "tar": "^7.5.11",
     "winston": "^3.13.0",
     "winston-daily-rotate-file": "^5.0.0",
     "ws": "^8.16.0"
@@ -131,7 +131,7 @@
     "c8": "^9.1.0",
     "clinic": "^13.0.0",
     "cross-env": "^7.0.3",
-    "esbuild": "^0.20.2",
+    "esbuild": "^0.25.0",
     "esbuild-plugin-clean": "^1.0.1",
     "esbuild-plugin-copy": "^2.1.1",
     "eslint": "^8.57.0",
